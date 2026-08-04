@@ -5,7 +5,6 @@ def get_personal_data():
     email = "mp.marcel@outlook.de"
     #twitter = "test"
     github = "marcelplo1"
-    linkedin = "test"
     bio_text = f"""
                 <p>
                     I am a research assistant at the <a href="https://uni-tuebingen.de/en/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/autonomous-vision/home/" target="_blank">Autonomous Vision Group</a> in Tübingen, where I work on generative modelling together with <a href="https://gegeheseri.com/" target="_blank">Gege Gao</a>.
@@ -24,12 +23,13 @@ def get_personal_data():
                 </p>
             </div>
     """
-    return name, bio_text, footer, email, github, linkedin
+    return name, bio_text, footer, email, github
 
 def get_author_dict():
     return {
         'Andreas Geiger': 'https://www.cvlibs.net/',
-        'Gege Gao': 'https://gegeheseri.com/'
+        'Gege Gao': 'https://gegeheseri.com/',
+        'Bernhard Schölkopf': 'https://is.mpg.de/en/~bs'
         }
 
 def generate_person_html(persons, connection=", ", make_bold=True, make_bold_name='Marcel Plocher', add_links=True):
@@ -124,7 +124,7 @@ def get_talks_html():
 def get_index_html():
     pub = get_publications_html()
     talks = get_talks_html()
-    name, bio_text, footer, email, github, linkedin = get_personal_data()
+    name, bio_text, footer, email, github = get_personal_data()
     s = f"""
     <!doctype html>
 <html lang="en">
@@ -159,7 +159,6 @@ def get_index_html():
                             <a href="assets/pdf/cv_2026.pdf" target="_blank" style="margin-right: 10px"><i class="fas fa-id-card fa-lg"></i> CV</a>
                             <a href="mailto:{email}" style="margin-right: 10px"><i class="fas fa-envelope fa-lg"></i> Email</a>
                             <a href="https://github.com/{github}" target="_blank" style="margin-right: 10px"><i class="fab fa-github fa-lg"></i> GitHub</a>
-                            <a href="https://linkedin.com/in/{linkedin}" target="_blank" style="margin-right: 10px"><i class="fab fa-linkedin fa-lg"></i> LinkedIn</a>
                         </p>
                     </div>
                     <div class="col-md-4" style="">
