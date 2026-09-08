@@ -3,6 +3,7 @@ from pybtex.database.input import bibtex
 def get_personal_data():
     name = ["Marcel", "Plocher"]
     email = "mp.marcel@outlook.de"
+    email_uni = "marcel.plocher@student.uni-tuebingen.de"
     #twitter = "test"
     github = "marcelplo1"
     bio_text = f"""
@@ -23,7 +24,7 @@ def get_personal_data():
                 </p>
             </div>
     """
-    return name, bio_text, footer, email, github
+    return name, bio_text, footer, email, email_uni, github
 
 def get_author_dict():
     return {
@@ -124,7 +125,7 @@ def get_talks_html():
 def get_index_html():
     pub = get_publications_html()
     talks = get_talks_html()
-    name, bio_text, footer, email, github = get_personal_data()
+    name, bio_text, footer, email, email_uni, github = get_personal_data()
     s = f"""
     <!doctype html>
 <html lang="en">
@@ -158,6 +159,7 @@ def get_index_html():
                         <p>
                             <a href="assets/pdf/cv_2026.pdf" target="_blank" style="margin-right: 10px"><i class="fas fa-id-card fa-lg"></i> CV</a>
                             <a href="mailto:{email}" style="margin-right: 10px"><i class="fas fa-envelope fa-lg"></i> Email</a>
+                            <a href="mailto:{email_uni}" style="margin-right: 10px"><i class="fas fa-envelope fa-lg"></i> University Email</a>
                             <a href="https://github.com/{github}" target="_blank" style="margin-right: 10px"><i class="fab fa-github fa-lg"></i> GitHub</a>
                         </p>
                     </div>
